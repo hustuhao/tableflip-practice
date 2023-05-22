@@ -7,5 +7,6 @@ pid=$(pgrep $appname)
 if [ "$pid" = "" ]; then
 	./$appname
 else
-	kill -SIGTERM "${pid}"
+#	kill -SIGTERM "${pid}"
+	kill -SIGUSR2 "${pid}"
 fi
